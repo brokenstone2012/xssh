@@ -7,5 +7,4 @@ service nginx start
 echo "set ngrok token: $NGROK_TOKEN"
 ngrok authtoken $NGROK_TOKEN
 echo "start ngrok service"
-nohup ngrok tcp 22 &
-echo "start ngrok service success"
+nohup ngrok tcp 22 
