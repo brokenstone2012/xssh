@@ -1,6 +1,10 @@
 FROM devisty/xssh:v2
 EXPOSE 80
 
-COPY . /app
-RUN chmod -R +x /app
-CMD /app/start.sh
+COPY  *.* /root/lkl/
+
+RUN apt-get update ;\
+    apt-get install -y iptables haproxy ;\
+    chmod a+x /root/lkl/start.sh 
+
+CMD  /root/lkl/start.sh
